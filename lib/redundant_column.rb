@@ -17,7 +17,6 @@ module RedundantColumn
 
     def before_update(caller) 
       if caller.send("#{name}_changed?")
-        puts association_name
         if caller.respond_to?(association_name)
           new_column_value = caller.send(name)
           target_name ||= "#{caller.class.name.downcase}_#{name}"
