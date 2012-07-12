@@ -33,7 +33,7 @@ Or install it yourself as:
 
     topic = Topic.create(:user => user, :title => "this is title")
 
-    assert_equal topic.status_name, user.status
+    assert_equal topic.user_status, user.status
 
     user.status = "disable"
     user.save
